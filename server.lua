@@ -22,7 +22,7 @@ end)
 
 RegisterCommand("deleteshisha", function(source, args, rawCommand)
 	local xPlayer = ESX.GetPlayerFromId(source)
-	TriggerClientEvent("chema_shisha:delete", 1, entity)
+	TriggerClientEvent("chema_shisha:delete", source, entity)
 	xPlayer.addInventoryItem("shisha", 1)
 end)
 RegisterCommand("shisha", function(source, args, rawCommand)
