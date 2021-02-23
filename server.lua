@@ -17,18 +17,18 @@ ESX.RegisterUsableItem('shisha', function(playerId)
     local xPlayer = ESX.GetPlayerFromId(playerId)
     xPlayer.removeInventoryItem('shisha', 1)
 	xPlayer.showNotification('~g~The shisha was set up.')
-	TriggerClientEvent("chema_shisha:spawn", -1, entity)
+	TriggerClientEvent("chema_shisha:spawn", source, entity)
 end)
 
 RegisterCommand("deleteshisha", function(source, args, rawCommand)
 	local xPlayer = ESX.GetPlayerFromId(source)
-	TriggerClientEvent("chema_shisha:delete", -1, entity)
+	TriggerClientEvent("chema_shisha:delete", 1, entity)
 	xPlayer.addInventoryItem("shisha", 1)
 end)
 RegisterCommand("shisha", function(source, args, rawCommand)
     local xPlayer = ESX.GetPlayerFromId(source)
 	
-	TriggerClientEvent("chema_shisha:spawn", -1, entity, xPlayer)
+	TriggerClientEvent("chema_shisha:spawn", source, entity, xPlayer)
 end)
 
 local CurrentVersion = '1.0'
